@@ -18,19 +18,20 @@ function App() {
     const data = await response.json();
     setBeers(data);
   };
-  fetchBeers()
+  fetchBeers();
   return (
     <>
-      <MyContext.Provider value={{beers , setPage , page , searchResult, setSearchResult}}>
+      <MyContext.Provider
+        value={{ beers, setPage, page, searchResult, setSearchResult }}
+      >
         <BrowserRouter>
-      <Navbar/>
+          <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/search" element={<SearchList />} />
           </Routes>
-          <Pagination/>
+          <Pagination />
         </BrowserRouter>
-
       </MyContext.Provider>
     </>
   );
