@@ -1,10 +1,7 @@
 import React from 'react'
 
 export default function Cards(props) {
-    function getShortDescription(description) {
-        const shortDescription = description.slice(0, 15);
-        return {shortDescription}
-      }
+   
     return (
         <div class="max-w-sm rounded overflow-hidden  shadow-lg">
             <div className='flex justify-center '>
