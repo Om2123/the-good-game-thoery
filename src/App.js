@@ -2,6 +2,9 @@ import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Home from "./Home";
 import { MyContext } from "./Context/MyContext";
 import { useState } from "react";
+import SearchList from "./SearchList";
+import Pagination from "./compo/Pagination";
+import Navbar from "./compo/Navbar";
 
 function App() {
   const [beers, setBeers] = useState([]);
@@ -20,10 +23,14 @@ function App() {
     <>
       <MyContext.Provider value={{beers , setPage , page , searchResult, setSearchResult}}>
         <BrowserRouter>
+      <Navbar/>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/search" element={<SearchList />} />
           </Routes>
+          <Pagination/>
         </BrowserRouter>
+
       </MyContext.Provider>
     </>
   );
